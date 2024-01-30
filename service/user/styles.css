@@ -1,0 +1,157 @@
+:root
+{
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: rgb(138, 186, 230);
+    --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+body 
+{
+    min-height: 100vh;
+    background: linear-gradient(35deg, rgb(0, 145, 255), rgb(232, 229, 232));
+}
+
+select 
+{
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 15rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: rgb(14, 4, 4);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    &::-ms-expand 
+    {
+      display: none;
+    }
+    &:focus 
+    {
+      outline: none;
+    }
+}
+
+select + select
+{
+    margin-top: 3em;
+}
+
+select option 
+{
+    color: inherit;
+    background-color:  var(--option-bg);
+}
+
+td 
+{
+    vertical-align: top;
+}
+
+.selects
+{
+    width: 15rem;
+    padding-top: 3rem;
+    margin-left: 5rem;
+}
+
+.info
+{
+    display: inline-block;
+    margin-left: 5rem;
+    margin-top: 3rem;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: rgb(195, 229, 255);
+    width: 50rem;
+    border-radius: 10px;
+}
+
+.top_menu 
+{
+    padding: -100px;
+    background-color: #46469c;
+    overflow: hidden;
+}
+  
+.top_menu li 
+{
+    list-style-type: none;
+    float: left;
+    color: rgb(187, 187, 187);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+  
+.top_menu li:hover 
+{
+    color: rgb(47, 46, 46);
+    background-color: #9696e2;
+}
+  
+.top_menu li.active
+{
+    background-color: #333385;
+    color: rgb(187, 187, 187);
+}
+
+.exam_shedule_g, .exam_shedule_e
+{
+    padding-bottom: 1em;
+    margin-top: 2em;
+    border-bottom: 1px solid black;
+}
+
+#exit
+{
+    float: right;
+}
+
+#div_main
+{
+    display: inline-block;
+}
+
+#div_higher
+{
+    display: none;
+}
+
+#div_groups
+{
+    display: none;
+}
+
+#div_departaments
+{
+    display: none;
+}
+
+#div_shedule_g
+{
+    display: none;
+}
+
+#div_shedule_e
+{
+    display: none;
+}
+
+#secret
+{
+    display: inline-block;
+    margin-bottom: -8px;
+    padding-bottom: 0px;
+    font-size: 0;
+}
+
+#secret:hover
+{
+    font-size: 16px;
+}

@@ -1,0 +1,225 @@
+:root
+{
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: rgb(138, 186, 230);
+    --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+body 
+{
+    min-height: 100vh;
+    background: linear-gradient(35deg, rgb(0, 145, 255), rgb(232, 229, 232));
+}
+
+#group0, #group1
+{
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 15rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: rgb(14, 4, 4);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    &::-ms-expand 
+    {
+      display: none;
+    }
+    &:focus 
+    {
+      outline: none;
+    }
+}
+
+#group0 option, #group1 option 
+{
+    color: inherit;
+    background-color:  var(--option-bg);
+}
+
+input
+{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.add_new
+{
+    background-color: rgb(100, 137, 239);
+    background-repeat: no-repeat;
+    background-size: 70% auto;
+    background-position: center;
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-left: 12px;
+    border-radius: 10px;
+    width: 125px;
+    height: 40px;
+}
+
+.edit_button, .delete_button, .accept_button
+{
+    background-color: rgb(100, 137, 239);
+    background-repeat: no-repeat;
+    background-size: 70% auto;
+    background-position: center;
+    display: block;
+    float: left;
+    margin-left: 7px;
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.edit_button
+{
+    background-color: rgb(239, 232, 100);
+    background-image: url("../admin/edit.png");
+}
+
+.delete_button
+{
+    background-color: rgb(239, 116, 100);
+    background-image: url("../admin/delete.png");
+}
+
+.accept_button
+{
+    text-align: center;
+    padding-top: 0px;
+    width: 57px;
+    background-color: rgb(100, 239, 142);
+}
+
+.edit_button:hover, .delete_button:hover, .accept_button:hover, .add_new:hover
+{
+    background-color: rgb(81, 175, 247);
+}
+
+td 
+{
+    vertical-align: top;
+}
+
+.stud_tabl
+{
+    margin-left: 0.7em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.exam_table
+{
+    margin-left: 0.7em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.stud_table tr:hover
+{
+    background-color: rgb(129, 193, 243);;
+}
+
+.exam_table td, .exam_table th
+{
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.exam_table .main
+{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: left;
+}
+
+.stud_table td, .stud_table th
+{
+    text-align: center;
+    border: 1px solid #333;
+}
+
+td.edit_col, th.edit_col
+{
+    border-style: none;
+    text-align: center;
+    width: 10%;
+}
+
+.selects
+{
+    width: 15rem;
+    padding-top: 3rem;
+    margin-left: 5rem;
+}
+
+.info
+{
+    display: inline-block;
+    margin-left: 5rem;
+    margin-top: 3rem;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: rgb(195, 229, 255);
+    width: 50rem;
+    border-radius: 10px;
+}
+
+.top_menu 
+{
+    padding: -100px;
+    background-color: #46469c;
+    overflow: hidden;
+}
+  
+.top_menu li 
+{
+    list-style-type: none;
+    float: left;
+    color: rgb(187, 187, 187);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+  
+.top_menu li:hover 
+{
+    color: rgb(47, 46, 46);
+    background-color: #9696e2;
+}
+  
+.top_menu li.active
+{
+    background-color: #333385;
+    color: rgb(187, 187, 187);
+}
+
+#exit
+{
+    float: right;
+}
+
+#div_main
+{
+    display: inline-block;
+}
+
+#div_students
+{
+    display: none;
+}
+
+#div_exams
+{
+    display: none;
+}

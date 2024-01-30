@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="service/admin/styles.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script type="text/javascript" src="service/admin/script.js"></script>
+    </head>
+    <body>
+        <table style="display: none;">
+            <tbody>
+                <tr class="stud_row">
+                    <td name="num"></td>
+                    <td name="name"><input type="text"/></td>
+                    <td name="phone"></td>
+                    <td name="gradebook"></td>
+                    <td class="edit_col">
+                        <button class="edit_button" onclick="st_edit_button_onclick(this)"></button>
+                        <button class="delete_button" onclick="st_delete_button_onclick(this)"></button>
+                        <button class="accept_button" onclick="st_accept_button_onclick(this)" style="display: none">OK</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="display: none;">
+            <tbody>
+                <tr class="exam_row">
+                    <td name="num"></td>
+                    <td class="main">
+                        <b>Проводящий преподаватель:</b> <label name="actor"></label><br>
+                        <b>Дата начала:</b> <label name="begin"></label><br>
+                        <b>Дата окончания:</b> <label name="end"></label><br>
+                        <b>Кабинет:</b> <label name="class"></label><br>
+                    </td>
+                    <td class="edit_col">
+                        <button class="edit_button" onclick="ex_edit_button_onclick(this)"></button>
+                        <button class="delete_button" onclick="ex_delete_button_onclick(this)"></button>
+                        <button class="accept_button" onclick="ex_accept_button_onclick(this)" style="display: none">OK</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="top_menu">
+            <li id="main" class="active" onclick="select_category('main')">Главная</li>
+            <li id="students" onclick="select_category('students'); get_select_list('group0', 'group_dep')">Управление студентами</li>
+            <li id="exams" onclick="select_category('exams'); get_select_list('group1', 'group_dep')">Управление экзаменами</li>
+            <li id="exit" onclick="document.cookie='role=';location.href='/login'">Выход</li>
+        </div>
+        <div class="body">
+            <div id="div_main">
+                <div class="info">
+                    -Oh shit, I'm sorry.<br>
+                    -Sorry for what? Our daddy taught us not to be ashamed of our dicks. Especially since they’re such good size and all.<br>
+                    -Yeah, i see that. Your daddy gave you good advice.<br>
+                    -It gets bigger when I pull on it.<br>
+                    -MMmmMmMmMmmm<br>
+                    -Sometimes I pull on it so hard, I rip the skin<br>
+                    -Well my daddy taught me a few things too, like uh, how to not to rip the skin by, uh, using someone else's mouth, instead of your own hands.<br>
+                    -Will you show me?<br>
+                    -I'd be right happy to…
+                </div>
+            </div>
+            <div id="div_students">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="selects">
+                                    <select id="group0" onchange="get_students_info(this.value)">
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="info">
+                                    <h2 name="title"></h2>
+                                    <b>Форма обучения:</b> <label name="form"></label><br>
+                                    <table class="stud_table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 5%;">№</th>
+                                                <th style="width: 36%;">ФИО</th>
+                                                <th style="width: 30%;">Телефон</th>
+                                                <th style="width: 20%;">Зачётная книжка</th>
+                                                <th class="edit_col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody name="stud_body">
+                                        </tbody>
+                                    </table>
+                                    <button class="add_new" onclick="st_add_new_onclick(this.value)">Добавить</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="div_exams">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="selects">
+                                    <select id="group1" onchange="get_exams_info(this.value)">
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="info">
+                                    <h2 name="title"></h2>
+                                    <table class="exam_table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 5%;">№</th>
+                                                <th style="width: 86%;">Экзамен</th>
+                                                <th class="edit_col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody name="exam_body">
+                                        </tbody>
+                                    </table>
+                                    <button class="add_new" onclick="ex_add_new_onclick(this.value)">Добавить</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

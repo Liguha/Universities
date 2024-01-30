@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="login/styles.css">
+        <script type="text/javascript" src="login/script.js"></script>
+    </head>
+    <body>
+        <div class = "container">
+            <div class="text">Выберите вашу роль:</div>
+            <span class="skip25"></span>
+            <button id="admin" onclick="show_next(1, this.id)">Руководитель</button>
+            <div class="text_input" id="email_input">
+                <button class="accept" onclick="show_next(-1, this.parentNode.id)"><</button>
+                <input id="email" placeholder="email"/>
+                <button class="accept" onclick="show_next(1, this.parentNode.id); check_mail()">></button>
+            </div>
+            <div class="text_input" id="code_input">
+                <button class="accept" onclick="show_next(-1, this.parentNode.id)"><</button>
+                <input id="code" placeholder="Код из письма"/>
+                <button class="accept" onclick="login_admin()">></button>
+            </div>
+            <span class="skip15"></span>
+            <button id="user" onclick="login_user()">Посетитель</button>
+        </div>
+    </body>
+</html>
